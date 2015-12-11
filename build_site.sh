@@ -7,7 +7,7 @@ GITHUB_COMMITS_API_URL="https://api.github.com/repos/vokkim/test-site/commits/ma
 REPOSITORY_PACKAGE="master.tar.gz"
 SITES_PATH="sites/"
 BUILD_PATH="site-constraction-yard"
-DEPLOY_PATH="public_html/test"
+DEPLOY_PATH="public_html"
 PID_FILE="build.pid"
 
 echo -e "\n!! Build site !!\n"
