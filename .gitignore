@@ -1,2 +1,7 @@
 build/
 node_modules/
+public_html/
+site-constraction-yard/
+master.tar.gz
+build.pid
+sites/
