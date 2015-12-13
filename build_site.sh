@@ -10,7 +10,8 @@ BUILD_PATH="site-constraction-yard"
 DEPLOY_PATH="public_html"
 PID_FILE="build.pid"
 
-echo -e "\n!! Build site !!\n"
+DATE=`date`
+echo -e "\n!! Build site $DATE !!\n"
 
 ### PID HANDLING
 if [ -e $PID_FILE ]; then
@@ -58,12 +59,12 @@ then
   cd ..
   mv $BUILD_PATH/build $TARGET_PATH
 
-  # Stupid rsync cause /bin/ln permission denied
-  rsync -a --delete $TARGET_PATH/ public_html/test
+  # Must use supid rsync cause /bin/ln permission denied
+  rsync -a --delete $TARGET_PATH/ $DEPLOY_PATH
 
   echo "** Cleanup old sites **"
   cd $SITES_PATH
-  ls -t / | sed -e '1,4d' | xargs -d '\n' rm -rf
+  ls --ignore='.*' -x1t | sed -e '1,4d' | xargs -d '\n' rm -rf
 
   cd ..
 
