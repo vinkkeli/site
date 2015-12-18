@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Disallow: /webmail/
+Disallow: /styles/
+Disallow: googlee7604517913b481f.html
