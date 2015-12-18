@@ -52,7 +52,7 @@ then
 
   echo "** Building site **"
 
-  $NODE_PATH/node index.js
+  NODE_ENV=production $NODE_PATH/node index.js
 
   echo "** Syncing site from $TARGET_PATH to $DEPLOY_PATH **"
 
