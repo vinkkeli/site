@@ -9,8 +9,8 @@ var define = require('metalsmith-define')
 var branch = require('metalsmith-branch')
 var mapsite = require('metalsmith-mapsite')
 
-var production = (process.env || 'dev') === 'production'
-var assetsPath = production ? '' : '/build/'
+var production = (process.env.NODE_ENV || 'dev') === 'production'
+var assetsPath = production ? '/' : '/build/'
 
 var GOOGLE_VERIFICATION_FILE = 'googlee7604517913b481f.html'
 
