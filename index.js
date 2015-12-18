@@ -7,13 +7,15 @@ var cleanCSS = require('metalsmith-clean-css')
 var fingerprint = require('metalsmith-fingerprint-ignore')
 var define = require('metalsmith-define')
 var branch = require('metalsmith-branch')
+var mapsite = require('metalsmith-mapsite')
 
 var production = (process.env || 'dev') === 'production'
 var assetsPath = production ? '' : '/build/'
 
+var GOOGLE_VERIFICATION_FILE = 'googlee7604517913b481f.html'
 
 var notForGoogle = function(filename) {
-  return filename !== 'googlee7604517913b481f.html'
+  return filename !== GOOGLE_VERIFICATION_FILE
 }
 
 
@@ -37,5 +39,11 @@ Metalsmith(__dirname)
     pattern: ':title',
     relative: false
   })))
+  .use(mapsite({
+    hostname: 'http://www.ravintolavinkel.fi',
+    changefreq: 'daily',
+    pattern: ['**/*.html', '!'+GOOGLE_VERIFICATION_FILE, '!webmail/*'],
+    omitIndex: true
+  }))
   .destination('./build')
   .build(function (err) { if(err) console.log(err) })
