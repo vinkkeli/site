@@ -1,6 +1,7 @@
 var Metalsmith = require('metalsmith')
 var markdown = require('metalsmith-markdown')
-var templates  = require('metalsmith-templates')
+var partial = require('metalsmith-partial')
+var templates = require('metalsmith-templates')
 var less  = require('metalsmith-less')
 var permalinks  = require('metalsmith-permalinks')
 var cleanCSS = require('metalsmith-clean-css')
@@ -35,8 +36,11 @@ Metalsmith(__dirname)
   }))
   .use(fingerprint({ pattern: ['styles/main.css'] }))
   .use(templates('handlebars'))
+  .use(partial({
+    directory: './templates', 
+    engine: 'handlebars'
+  }))
   .use(branch(notForGoogle).use(permalinks({
-    pattern: ':title',
     relative: false
   })))
   .use(mapsite({
