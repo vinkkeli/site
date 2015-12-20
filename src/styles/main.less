@@ -48,14 +48,14 @@ table {
 
 html {
   height: 100%;
+  background: url('bg.jpg') no-repeat left top #e0e0e0;
+  background-size: contain;
 }
 body {
   font-family: 'Source Sans Pro', times;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   color: #1e1e1e;
-  background: url('bg.jpg') no-repeat left top #e0e0e0;
-  background-size: contain;
 }
 
 .main-wrapper {
@@ -85,4 +85,29 @@ h3 {
   font-weight: 300;
   margin-bottom: 20px;
   font-size: 50px;
+}
+
+
+@media all and (max-width: 620px) {
+  html {
+    background: url('bg.jpg') no-repeat left bottom #e0e0e0;
+    background-size: cover;
+  }
+  .main-wrapper {
+    width: auto;
+    margin: 20px 0;
+    padding: 20px;
+    h1 {
+      font-size: 40px;
+    }
+    h3 {
+      font-size: 30px;
+    }
+  }
+}
+
+@media all and (min-width: 621px) and (max-height: 620px) {
+  .main-wrapper {
+    margin-top: 10%;
+  }
 }
