@@ -2,8 +2,8 @@
 set -o errexit
 
 NODE_PATH="../node/node-v4.2.3-linux-x64/bin"
-GITHUB_REPOSITORY_URL="https://github.com/vokkim/test-site/archive/master.tar.gz"
-GITHUB_COMMITS_API_URL="https://api.github.com/repos/vokkim/test-site/commits/master"
+GITHUB_REPOSITORY_URL="https://github.com/vinkel/site/archive/master.tar.gz"
+GITHUB_COMMITS_API_URL="https://api.github.com/repos/vinkel/site/commits/master"
 REPOSITORY_PACKAGE="master.tar.gz"
 SITES_PATH="sites/"
 BUILD_PATH="site-constraction-yard"
