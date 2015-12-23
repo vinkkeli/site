@@ -15,6 +15,8 @@ var assetsPath = production ? '/' : '/build/'
 
 var GOOGLE_VERIFICATION_FILE = 'googlee7604517913b481f.html'
 
+var gaTrackerId = production ? 'UA-71560905-1' : ''
+
 var notForGoogle = function(filename) {
   return filename !== GOOGLE_VERIFICATION_FILE
 }
@@ -24,7 +26,8 @@ Metalsmith(__dirname)
   .concurrency(50)
   .use(define({
     production: true,
-    assetsPath: assetsPath
+    assetsPath: assetsPath,
+    gaTrackerId: gaTrackerId
   }))
   .use(markdown())
   .use(less({pattern: 'styles/main.less'}))
