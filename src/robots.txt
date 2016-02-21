@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /webmail/
 Disallow: /styles/
 Disallow: googlee7604517913b481f.html
+Sitemap: http://www.ravintolavinkel.fi/sitemap.xml
