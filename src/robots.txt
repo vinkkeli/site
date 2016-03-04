@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /webmail/
 Disallow: googlee7604517913b481f.html
+Disallow: /test-front/
 Sitemap: http://www.ravintolavinkel.fi/sitemap.xml

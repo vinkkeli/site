@@ -1,8 +1,7 @@
 var Metalsmith = require('metalsmith')
-var partial = require('metalsmith-partial')
 var layouts = require('metalsmith-layouts')
 var inPlace = require('metalsmith-in-place')
-
+var LessPluginAutoPrefix = require('less-plugin-autoprefix')
 var less  = require('metalsmith-less')
 var permalinks  = require('metalsmith-permalinks')
 var cleanCSS = require('metalsmith-clean-css')
@@ -23,6 +22,8 @@ var notForGoogle = function(filename) {
   return filename !== GOOGLE_VERIFICATION_FILE
 }
 
+autoprefixPlugin = new LessPluginAutoPrefix({browsers: ["last 2 versions"]})
+
 
 content(function(revision, contentFields) {
   Metalsmith(__dirname)
@@ -33,14 +34,14 @@ content(function(revision, contentFields) {
       gaTrackerId: gaTrackerId,
       content: contentFields
     }))
-    .use(less({pattern: 'styles/main.less'}))
+    .use(less({pattern: 'styles/*.less', render: { plugins: [autoprefixPlugin] }}))
     .use(cleanCSS({
-      files: 'styles/main.css',
+      files: 'styles/*.css',
       cleanCSS: {
         rebase: true
       }
     }))
-    .use(fingerprint({ pattern: ['styles/main.css'] }))
+    .use(fingerprint({ pattern: ['styles/*.css'] }))
     .use(inPlace({
       engine: 'handlebars',
       partials: './templates'
