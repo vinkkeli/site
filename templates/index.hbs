@@ -27,14 +27,6 @@
   <meta name="robots" content="index,follow" />
 </head>
 <body>
-  {{> top-address }}
-  <div class="lang-navi">
-    <ul class="languages">
-      <li><a href="/">FI</a></li>
-      <li><a href="/">SV</a></li>
-      <li><a href="/">EN</a></li>
-    </ul>
-  </div>
   <div class="main-navigation">
     <div class="">
       <img class="logo" src="{{assetsPath}}styles/logo-white.png" alt="Vinkel, ruoka- ja viiniravintola"/>
@@ -53,10 +45,12 @@
   <div class="footer">
     <div class="content">
       <div class="info">
-        <h4>Lounas</h4>
-        <p>ma-pe klo 11.30-14.30</p>
-        <h4>Illallinen</h4>
-        <p>ti-la klo 17.00-24.00</p>
+        <h4>Aukioloajat</h4>
+        <p class="hours">
+          <span>ma</span> 11:30-14:30<br/>
+          <span>ti-pe</span> 11:30-14:30 ja 17:00-24:00<br/>
+          <span>la</span> 17:00-24:00
+        </p>
         <h4>Ota yhteyttä</h4>
         <p><a href="mailto:info@ravintolavinkel.fi">info@ravintolavinkel.fi</a></p>
         <p><a href="tel:+358291800222">029-1800222</a><span class="tel-info">(0,08 €/min. + pvm/mpm)</span></p>
@@ -90,6 +84,25 @@
     })
     map.mapTypes.set('map_style', styledMap)
     map.setMapTypeId('map_style')
+  }
+
+
+  var buttons = document.getElementsByClassName('reserve-table-button')
+  var close = document.getElementsByClassName('close-reserve-table')
+  var reserveTableDiv = document.getElementsByClassName('reserve-table')
+  if (buttons.length && reserveTableDiv.length) {
+    var b = buttons[0]
+    var r = reserveTableDiv[0]
+    function openReservtions(e) {
+      e.preventDefault()
+      r.classList.remove('closed')
+    }
+    function closeReservations(e) {
+      e.preventDefault()
+      r.classList.add('closed')
+    }
+    b.addEventListener("click", openReservtions, false)
+    close[0].addEventListener("click", closeReservations, false)
   }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkr155MvQ-F-YZEW9usdhBBuySlZf6Ydc&callback=initMap" async defer></script>

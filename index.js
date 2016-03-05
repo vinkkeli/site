@@ -34,7 +34,7 @@ content(function(revision, contentFields) {
       gaTrackerId: gaTrackerId,
       content: contentFields
     }))
-    .use(less({pattern: 'styles/*.less', render: { plugins: [autoprefixPlugin] }}))
+    .use(less({pattern: 'styles/*.less', render: { plugins: [autoprefixPlugin], paths: ['src/styles/'] }}))
     .use(cleanCSS({
       files: 'styles/*.css',
       cleanCSS: {
