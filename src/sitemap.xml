@@ -1,0 +1,24 @@
+<?xml version="1.0" ficoding="UTF-8"?>
+<urlset 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+    xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+    xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+    <url>
+        <loc>http://www.ravintolavinkkeli.fi/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
+        <xhtml:link rel="alternate" hreflang="se" href="http://www.ravintolavinkkeli.fi/se/" />
+        <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
+    </url>
+    <url>
+        <loc>http://www.ravintolavinkkeli.fi/en/</loc>
+        <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
+        <xhtml:link rel="alternate" hreflang="se" href="http://www.ravintolavinkkeli.fi/se/" />
+        <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
+    </url>
+    <url>
+        <loc>http://www.ravintolavinkkeli.fi/se/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
+        <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
+        <xhtml:link rel="alternate" hreflang="se" href="http://www.ravintolavinkkeli.fi/se/" />
+    </url>
+</urlset>

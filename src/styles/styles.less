@@ -12,8 +12,11 @@
 @desktop: ~"(min-width: @{desktopMinWidth}px)";
 @bodyBackground: #fdfdfd; //eee9e2
 @naviBackground: #101010; //#ede9e2;
-@footerBackground: #F5EBE0;
+@footerBackground: #F9F1E9;
 @bodyTextColor: #1e1e1e;
+@darkRed: #52251f;
+@lightRed: #B72E1C;
+
 * {
   box-sizing: border-box;
 }
@@ -30,8 +33,12 @@ body {
 }
 
 a, a:hover, a:visited {
-  color: @bodyTextColor;
+  color: @lightRed;
   text-decoration: none;
+  transition: color 200ms;
+}
+a:hover {
+  color: @darkRed;
 }
 h1, h2, h3, h4 {
   font-family: 'Crimson Text', times, serif;
@@ -44,8 +51,15 @@ h1, h2 {
   color: #46423D;
 }
 h1 {
-  font-size: 34px;
-  line-height: 34px;
+  max-width: 600px;
+  @media @tablet-and-desktop {
+    font-size: 34px;
+    line-height: 44px;
+  }
+  @media @mobile {
+    font-size: 28px;
+    line-height: 32px;
+  }
   @media @tablet {
     width: 60%;
   }
@@ -59,6 +73,7 @@ h4 {
   line-height: 14px;
   letter-spacing: 0.4px;
   margin-top: 40px;
+  margin-bottom: 5px;
   &:first-child {
     margin-top: 0;
   }
@@ -66,6 +81,7 @@ h4 {
 #map {
   width: 100%;
   height: 300px;
+  border: 2px solid #DEDDDB;
 }
 
 
@@ -90,25 +106,69 @@ h4 {
   background: @footerBackground;
   border-top: 1px solid #E2E1DF;
   font-size: 16px;
+  margin-top: 80px;
+
+  .social {
+    a {
+      display: inline-block;
+      margin: 0 0 10px;
+      cursor: pointer;
+
+      &:hover i {
+        color: @darkRed;
+      }
+      i {
+        text-align: center;
+        color: @bodyTextColor;
+        padding: 15px;
+        background: #FFF;
+        border-radius: 50px;
+        display: inline-block;
+        font-size: 24px;
+        vertical-align: top;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    }
+  }
 
   .content {
-    padding: 30px 0;
-    margin: auto;
-    display: flex;
 
-    .address {
-      flex: 1 0 auto;
-      margin-left: 40px;
+    margin: auto;
+    #map {
+      margin-top: 20px;
+    } 
+    @media @tablet-and-desktop {
+      padding: 30px 0;
+      display: flex;
+
+      .address {
+        flex: 1 0 auto;
+        margin-left: 40px;
+      }
+      .info {
+        flex: 0 0 300px;
+      }
+      
     }
-    .info {
-      flex: 0 0 300px;
+
+    @media @mobile {
+      padding: 15px 0 0 0;
+      .info, .address {
+        text-align: center;
+      }
+
+      .info {
+        margin-bottom: 30px;
+      }
     }
+
     .tel-info {
       display: block;
     }
     p {
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 0;
     }
   }
   .address span {
@@ -170,16 +230,82 @@ h4 {
 
 .languages {
   position: absolute;
-  top: 0px;
+  top: 10px;
   right: 10px;
-  li {
-    display: inline-block;
-    margin: 0 10px;
-    a {
-      font-size: 13px;
-      font-weight: 400;
-      color: #6F6961;
+  padding: 5px;
+  @item-height: 42px;
+  transition: height 200ms;
+  height: @item-height;
+  overflow: hidden;
+
+  &.open {
+    height: @item-height*3;
+    background: @naviBackground;
+    .icon-arrow {
     }
+  }
+
+  li {
+    a {
+      font-family: 'Open Sans', sans-serif;
+      padding: 5px 10px;
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      color: #ededed;
+      text-transform: uppercase;
+      transition: color 200ms;
+      &:hover {
+        color: #d4af6f;
+      }
+       .icon-arrow {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 6px;
+        transform: rotate(180deg);
+        margin-left: 10px;
+        vertical-align: top;
+        margin-top: 12px;
+      }
+    }
+
+  }
+}
+
+.instaheader {
+  font-size: 26px;
+  margin: 20px 5px;
+  a {
+    color: @bodyTextColor;
+  }
+  i {
+    margin-right: 10px;
+  }
+}
+
+.lightwidget-widget.mobile {
+  @media @tablet {
+    max-width: 700px;
+    height: 700px;  
+  }
+
+  @media @mobile {
+    max-width: 500px;
+    height: 500px;
+  }
+
+  @media (max-width: 430px) {
+    height: 360px;
+  }
+  
+  @media @desktop {
+    display: none;
+  }
+}
+.lightwidget-widget.desktop {
+  height: 220px;
+  @media @mobile-and-tablet {
+    display: none;
   }
 }
 
@@ -196,7 +322,8 @@ h4 {
   }
 
   @media @mobile {
-    height: 300px;
+    height: 240px;
+    margin-top: 70px;
   }
   width: 100%;
   position: relative;
@@ -234,25 +361,28 @@ h4 {
   }
   
 }
+
 a.reserve-table-button {
   padding: 15px;
   width: 150px;
   letter-spacing: 0.4px;
-  background-color: #B72E1C;
+  background-color: @lightRed;
   font-weight: 400;
   color: #fafafa;
   text-align: center;
   transition: background 200ms;
   border-radius: 2px;
   &:hover {
-    background: #52251f;
+    background: @darkRed;
   }
 }
 .reserve-table {
   background: @footerBackground;
   position: relative;
   overflow: hidden;
-  height: 575px;
+  @media @tablet-and-desktop {
+    height: 575px;
+  }
   transition: height 500ms;
 
   @media @mobile {
@@ -264,13 +394,13 @@ a.reserve-table-button {
   }
 
   .close-reserve-table {
-    padding: 10px;
+    padding: 5px;
     margin: 20px;
     position: absolute;
     right: 0;
     top: 0;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 30px;
     color: #988A71;
     transition: color 200ms;
     &:hover {
@@ -278,15 +408,31 @@ a.reserve-table-button {
     }
   }
   .content {
-    padding: 10px 30px 30px 30px;
-
     > div {
       display: flex;
     }
-    .tableonline {
-      flex: 0 0 auto;
-      margin-right: 40px;
+
+    @media @tablet-and-desktop {
+      padding: 10px 30px 30px 30px;
+      .tableonline {
+        flex: 0 0 auto;
+        margin-right: 40px;
+      }
     }
+    @media @mobile {
+      padding: 30px 10px; 
+      > div {
+        flex-wrap: wrap;
+      }
+      .info {
+        order: 1;
+      }
+      .tableonline {
+        margin-top: 20px;
+        order: 2;
+      }
+    }
+    
   }
 }
 .top-address {
@@ -294,6 +440,9 @@ a.reserve-table-button {
   @address-bar-height: 80px;
 
  .hours {
+    p {
+      margin-bottom: 0px;
+    }
     margin-bottom: 20px;
   }
   a.reserve-table-button {
@@ -305,13 +454,13 @@ a.reserve-table-button {
   }
 }
 
-.hours span {
+.hours li strong {
   display: inline-block;
-  width: 60px;
+  width: 90px;
 }
 
 .main-navigation img.logo {
-  width: 180px;
+  width: 220px;
   padding: 0;
   margin-top: 19px;
 }
@@ -330,9 +479,11 @@ a.reserve-table-button {
 .intro-text {
   flex: 1 1 auto;
   padding-right: 20px;
+  margin-bottom: 20px;
 
   @media @mobile {
     order: 2;
+    padding-right: 0;
   }
 }
 
@@ -343,6 +494,7 @@ a.reserve-table-button {
   margin-left: 20px;
   @media @mobile {
     order: 1;
+    margin-left: 0px;
   }
 }
 

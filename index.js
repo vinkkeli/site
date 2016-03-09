@@ -10,6 +10,9 @@ var define = require('metalsmith-define')
 var branch = require('metalsmith-branch')
 var mapsite = require('metalsmith-mapsite')
 var content = require('./content')
+var multiLanguage = require('metalsmith-multi-language')
+var ignore = require('metalsmith-ignore')
+var registerHelpers = require('metalsmith-register-helpers')
 
 var production = (process.env.NODE_ENV || 'dev') === 'production'
 var assetsPath = production ? '/' : '/build/'
@@ -22,10 +25,10 @@ var notForGoogle = function(filename) {
   return filename !== GOOGLE_VERIFICATION_FILE
 }
 
-autoprefixPlugin = new LessPluginAutoPrefix({browsers: ["last 2 versions"]})
+autoprefixPlugin = new LessPluginAutoPrefix({browsers: ["last 4 versions"]})
 
 
-content(function(revision, contentFields) {
+content(function(contentFields) {
   Metalsmith(__dirname)
     .concurrency(50)
     .use(define({
@@ -34,6 +37,8 @@ content(function(revision, contentFields) {
       gaTrackerId: gaTrackerId,
       content: contentFields
     }))
+    .use(registerHelpers({directory: "src/helpers/"}))
+    .use(multiLanguage({ default: 'fi', locales: ['fi', 'en', 'se'] }))
     .use(less({pattern: 'styles/*.less', render: { plugins: [autoprefixPlugin], paths: ['src/styles/'] }}))
     .use(cleanCSS({
       files: 'styles/*.css',
@@ -52,14 +57,18 @@ content(function(revision, contentFields) {
       engine: 'handlebars'
     }))
     .use(branch(notForGoogle).use(permalinks({
-      relative: false
+      relative: false,
+      pattern: ':locale/:slug',
     })))
-    .use(mapsite({
-      hostname: 'http://www.ravintolavinkel.fi',
-      changefreq: 'daily',
-      pattern: ['**/*.html', '!'+GOOGLE_VERIFICATION_FILE, '!webmail/*'],
-      omitIndex: true
-    }))
+    //.use(mapsite({
+    //  hostname: 'http://www.ravintolavinkkeli.fi',
+    //  changefreq: 'daily',
+    //  pattern: ['**/*.html', '!'+GOOGLE_VERIFICATION_FILE, '!webmail/*'],
+    //  omitIndex: true
+    //}))
+    .use(ignore([
+      'styles/*.less'
+    ]))
     .destination('./build')
     .build(function (err) { if(err) console.log(err) })
 

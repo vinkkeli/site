@@ -1,0 +1,17 @@
+<div class="main-navigation">
+  <div class="">
+    <img class="logo" src="{{assetsPath}}styles/logo-white.png" alt="Vinkel, ruoka- ja viiniravintola"/>
+    <!--<ul class="navigation">
+      <li><a href="" class="active">{{translate 'frontpage'}}</a></li>
+      <li><a href="">{{translate 'foodandvine'}}</a></li>
+      <li><a href="">{{translate 'lunchtitle'}}</a></li>
+      <li><a href="">Vinkkeli</a></li>
+    </ul>-->
+  </div>
+  <ul class="languages">
+    <li class="active"><a href="#" onclick="openLanguageMenu()">{{locale}} <i class="icon-chevron-down"></a></i></li>
+    {{#each locales}}
+      {{{langlink this}}}
+    {{/each}}
+  </ul>
+</div>

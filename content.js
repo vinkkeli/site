@@ -1,6 +1,8 @@
 var contentful = require('contentful')
 var marked = require('marked')
 var mapValues = require('lodash.mapvalues')
+var map = require('lodash.map')
+var filter = require('lodash.filter')
 
 if (!process.env.CONTENTFUL_ACCESS_TOKEN) {
   throw new Error('Requires contentful access token!')
@@ -15,10 +17,36 @@ var client = contentful.createClient({
 })
 
 function fetchContent(cb) {
-  client.entry('21iETXyGwMI8GGQ428ciig')
-    .then(function(entry) {
-      var html = mapValues(entry.fields, function(value) { return marked(value) })
-      cb(entry.sys.revision, html)
+  client.entries()
+    .then(function(entries) {
+      var arrays = map(entries, function(entry) {
+        var html = mapValues(entry.fields, function(value) { return marked(value) })
+
+        return map(html, function(val, keyWithLocale) {
+          if (keyWithLocale.split('_').length == 1) {
+            // No locale
+            return {locale: undefined, key: keyWithLocale, content: val}
+          } else {
+            var key = keyWithLocale.substring(0, keyWithLocale.lastIndexOf('_'))
+            var locale = keyWithLocale.substring(keyWithLocale.lastIndexOf('_')+1)
+            return {locale: locale, key: key, content: val}
+          }
+          
+        })
+      })
+
+      var all = []
+
+      for (i=0; i < arrays.length; i ++) {
+        all = all.concat(arrays[i])
+      }
+
+      var filtered = filter(all, function(v) {
+        var withSameKey = filter(all, function(f) { return f.key === v.key})
+        return !(v.locale === undefined && withSameKey.length > 1)
+      })
+      
+      cb(filtered)
     }).catch(function (response) {
       console.error(response)
       process.exit(1)

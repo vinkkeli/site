@@ -1,0 +1,70 @@
+<script type="text/javascript">
+var map
+function initMap() {
+  var styles = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#b4d4e1"},{"visibility":"on"}]}]
+  var styledMap = new google.maps.StyledMapType(styles, {name: "Map"})
+  var pos = new google.maps.LatLng(60.164181, 24.946187)
+  var mapOptions = {
+    zoom: 15,
+    center: pos,
+    mapTypeControl: false,
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    }
+  }
+  map = new google.maps.Map(document.getElementById('map'), mapOptions)
+  var image = {
+    url: '{{assetsPath}}/styles/mapmarker.png',
+    size: new google.maps.Size(60, 80),
+    scaledSize: new google.maps.Size(30, 40),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(15, 40),
+  }
+  var marker = new google.maps.Marker({
+    position: pos,
+    map: map,
+    title: 'Vinkkeli',
+    icon: image
+  })
+  map.mapTypes.set('map_style', styledMap)
+  map.setMapTypeId('map_style')
+}
+
+function track(name) {
+  try {
+    ga('send', 'event', name)
+  } catch(e) {}
+}
+
+var buttons = document.getElementsByClassName('reserve-table-button')
+var close = document.getElementsByClassName('close-reserve-table')
+var reserveTableDiv = document.getElementsByClassName('reserve-table')
+if (buttons.length && reserveTableDiv.length) {
+  var b = buttons[0]
+  var r = reserveTableDiv[0]
+  function openReservtions(e) {
+    e.preventDefault()
+    r.classList.remove('closed')
+    track('open reservations')
+  }
+  function closeReservations(e) {
+    e.preventDefault()
+    r.classList.add('closed')
+    track('close reservations')
+  }
+  b.addEventListener("click", openReservtions, false)
+  close[0].addEventListener("click", closeReservations, false)
+}
+
+function openLanguageMenu() {
+  var l = document.getElementsByClassName('languages')[0]
+  if (l.classList.contains('open')) {
+    l.classList.remove('open')
+    track('close language menu')
+  } else {
+    l.classList.add('open')
+    track('open language menu')
+  }
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkr155MvQ-F-YZEW9usdhBBuySlZf6Ydc&callback=initMap" async defer></script>  
