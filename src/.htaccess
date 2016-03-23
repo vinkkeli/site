@@ -1,3 +1,8 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^ravintolavinkel.fi$ [NC]
-RewriteRule ^(.*) http://www.ravintolavinkel.fi/$1 [R=301]
+RewriteRule ^(.*) http://www.ravintolavinkkeli.fi/$1 [R=301]
+
+RewriteCond %{HTTP_HOST} ^www\.ravintolavinkel.fi$ [NC]
+RewriteRule ^(.*) http://www.ravintolavinkkeli.fi/$1 [R=301]
+
+RewriteCond %{HTTP_HOST} ^ravintolavinkkeli.fi$ [NC]
