@@ -1,16 +1,22 @@
 ---
 title: Ravintola Vinkkeli
-description: Ravintola Vinkkeli avataan keväällä 2016
-permalink: true
-layout: main.hbs
-private: false
+description: Kaartinkaupungissa, Korkeavuorenkadun ja Pikku Roobertinkadun kulmassa sijaitseva Vinkkeli on rehti, kodikas ja mutkaton ruoka- ja viiniravintola.
+permalink: false
+layout: index.hbs
 ---
 
-<h1><img class="logo" src="{{assetsPath}}styles/logo-dark.png" alt="Vinkkeli, ruoka- ja viiniravintola"/></h1>
-<h3>Ravintola Vinkkeli avataan keväällä 2016</h3>
-<h3>Restaurant Vinkkeli opens in spring 2016</h3>
+<div class="hero"></div>
+<div class="main-content">
+  {{! > reserve-table }}
+  <h1>{{{translate 'frontpage_header'}}}</h1>
 
-<footer>
-  <address><a href="mailto:info@ravintolavinkkeli.fi">info@ravintolavinkkeli.fi</a></address>
-  <address>Pieni Roobertinkatu 8, 00130 Helsinki</address>
-</footer>
+  <div class="two-column">
+    <div class="intro-text">
+      {{{translate 'intro'}}}
+    </div>
+    <div class="right-column">
+      {{> top-address }}
+    </div>
+  </div>
+  {{> instafeed }}
+</div>
