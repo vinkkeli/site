@@ -8,7 +8,6 @@ var cleanCSS = require('metalsmith-clean-css')
 var fingerprint = require('metalsmith-fingerprint-ignore')
 var define = require('metalsmith-define')
 var branch = require('metalsmith-branch')
-var mapsite = require('metalsmith-mapsite')
 var content = require('./content')
 var multiLanguage = require('metalsmith-multi-language')
 var ignore = require('metalsmith-ignore')
@@ -60,12 +59,6 @@ content(function(contentFields) {
       relative: false,
       pattern: ':locale/:slug',
     })))
-    //.use(mapsite({
-    //  hostname: 'http://www.ravintolavinkkeli.fi',
-    //  changefreq: 'daily',
-    //  pattern: ['**/*.html', '!'+GOOGLE_VERIFICATION_FILE, '!webmail/*'],
-    //  omitIndex: true
-    //}))
     .use(ignore([
       'styles/*.less'
     ]))
