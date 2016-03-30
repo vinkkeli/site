@@ -3,19 +3,19 @@
     <url>
         <loc>http://www.ravintolavinkkeli.fi/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
-        <xhtml:link rel="alternate" hreflang="se" href="http://www.ravintolavinkkeli.fi/se/" />
+        <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/" />
         <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
     </url>
     <url>
         <loc>http://www.ravintolavinkkeli.fi/en/</loc>
         <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
-        <xhtml:link rel="alternate" hreflang="se" href="http://www.ravintolavinkkeli.fi/se/" />
+        <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/" />
         <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
     </url>
     <url>
-        <loc>http://www.ravintolavinkkeli.fi/se/</loc>
+        <loc>http://www.ravintolavinkkeli.fi/sv/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
         <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
-        <xhtml:link rel="alternate" hreflang="se" href="http://www.ravintolavinkkeli.fi/se/" />
+        <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/" />
     </url>
 </urlset>

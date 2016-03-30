@@ -37,7 +37,7 @@ content(function(contentFields) {
       content: contentFields
     }))
     .use(registerHelpers({directory: "src/helpers/"}))
-    .use(multiLanguage({ default: 'fi', locales: ['fi', 'en', 'se'] }))
+    .use(multiLanguage({ default: 'fi', locales: ['fi', 'en', 'sv'] }))
     .use(less({pattern: 'styles/*.less', render: { plugins: [autoprefixPlugin], paths: ['src/styles/'] }}))
     .use(cleanCSS({
       files: 'styles/*.css',
