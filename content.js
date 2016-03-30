@@ -4,6 +4,10 @@ var mapValues = require('lodash.mapvalues')
 var map = require('lodash.map')
 var filter = require('lodash.filter')
 
+marked.setOptions({
+  breaks: true,
+});
+
 if (!process.env.CONTENTFUL_ACCESS_TOKEN) {
   throw new Error('Requires contentful access token!')
 }
@@ -20,7 +24,7 @@ function fetchContent(cb) {
   client.entries()
     .then(function(entries) {
       var arrays = map(entries, function(entry) {
-        var html = mapValues(entry.fields, function(value) { return marked(value) })
+        var html = mapValues(entry.fields, function(value) { return marked((value || '').normalize('NFC')) })
 
         return map(html, function(val, keyWithLocale) {
           if (keyWithLocale.split('_').length == 1) {
