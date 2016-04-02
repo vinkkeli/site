@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="{{locale}}">
 <head>
+  {{#each locales}}
+    {{#ifnotlocale this}}
+      <link rel="alternate" hreflang="{{this}}" href="{{{langlink this}}}"></link>
+    {{/ifnotlocale}}
+  {{/each}}
+  
   <meta charset="UTF-8" />
   <title>{{title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">

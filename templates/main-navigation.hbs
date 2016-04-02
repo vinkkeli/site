@@ -11,7 +11,9 @@
   <ul class="languages">
     <li class="active"><a href="#" onclick="openLanguageMenu()">{{locale}} <i class="icon-chevron-down"></a></i></li>
     {{#each locales}}
-      {{{langlink this}}}
+      {{#ifnotlocale this}}
+        <li><a rel="alternate" hreflang="{{this}}" href="{{{langlink this}}}">{{this}}</a></li>
+      {{/ifnotlocale}}
     {{/each}}
   </ul>
 </div>
