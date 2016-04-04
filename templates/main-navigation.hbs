@@ -9,7 +9,7 @@
     </ul>-->
   </div>
   <ul class="languages">
-    <li class="active"><a href="#" onclick="openLanguageMenu()">{{locale}} <i class="icon-chevron-down"></a></i></li>
+    <li class="active"><a href="#" onclick="openLanguageMenu()">{{locale}} <i class="icon-chevron-down"></i></a></li>
     {{#each locales}}
       {{#ifnotlocale this}}
         <li><a rel="alternate" hreflang="{{this}}" href="{{{langlink this}}}">{{this}}</a></li>
