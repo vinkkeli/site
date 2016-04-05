@@ -1,19 +1,21 @@
-<div class="main-navigation">
-  <div class="">
-    <img class="logo" src="{{assetsPath}}styles/logo-white.png" alt="Vinkkeli, ruoka- ja viiniravintola"/>
-    <!--<ul class="navigation">
-      <li><a href="" class="active">{{translate 'frontpage'}}</a></li>
-      <li><a href="">{{translate 'foodandvine'}}</a></li>
-      <li><a href="">{{translate 'lunchtitle'}}</a></li>
-      <li><a href="">Vinkkeli</a></li>
-    </ul>-->
-  </div>
-  <ul class="languages">
-    <li class="active"><a href="#" onclick="openLanguageMenu()">{{locale}} <i class="icon-chevron-down"></i></a></li>
-    {{#each locales}}
-      {{#ifnotlocale this}}
-        <li><a rel="alternate" hreflang="{{this}}" href="{{{langlink this}}}">{{this}}</a></li>
-      {{/ifnotlocale}}
-    {{/each}}
-  </ul>
-</div>
+ <ul class="navigation">
+  {{#iflocale 'fi'}}
+  <li><a href="/">{{translate 'frontpage'}}</a></li>
+  <li><a href="/fi/ruoka/">{{translate 'food'}}</a></li>
+  <li><a href="/fi/viini/">{{translate 'wine'}}</a></li>
+  <li><a href="/fi/lounas/">{{translate 'lunchtitle'}}</a></li>
+  {{/iflocale}}
+  {{#iflocale 'sv'}}
+  <li><a href="/sv/">{{translate 'frontpage'}}</a></li>
+  <li><a href="/sv/mat/">{{translate 'food'}}</a></li>
+  <li><a href="/sv/vin/">{{translate 'wine'}}</a></li>
+  <li><a href="/sv/lunch/">{{translate 'lunchtitle'}}</a></li>
+  {{/iflocale}}
+  {{#iflocale 'en'}}
+  <li><a href="/en/">{{translate 'frontpage'}}</a></li>
+  <li><a href="/en/food/">{{translate 'food'}}</a></li>
+  <li><a href="/en/wine/">{{translate 'wine'}}</a></li>
+  <li><a href="/en/lunch/">{{translate 'lunchtitle'}}</a></li>
+  {{/iflocale}}
+  <li><a href="/{{locale}}/vinkkeli/">Vinkkeli</a></li>
+</ul>

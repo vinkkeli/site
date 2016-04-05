@@ -66,5 +66,16 @@ function openLanguageMenu() {
     track('open language menu')
   }
 }
+
+function openNavigationDrawer() {
+  var drawer = document.getElementsByClassName('navigation-mobile')[0]
+  if (drawer.classList.contains('open')) {
+    drawer.classList.remove('open')
+    track('close mobile menu')
+  } else {
+    drawer.classList.add('open')
+    track('open mobile menu')
+  }
+}
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkr155MvQ-F-YZEW9usdhBBuySlZf6Ydc&callback=initMap" async defer></script>  

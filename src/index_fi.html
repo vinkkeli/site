@@ -5,18 +5,4 @@ permalink: false
 layout: index.hbs
 ---
 
-<div class="hero"></div>
-<div class="main-content">
-  {{! > reserve-table }}
-  <h1>{{{translate 'frontpage_header'}}}</h1>
-
-  <div class="two-column">
-    <div class="intro-text">
-      {{{translate 'intro'}}}
-    </div>
-    <div class="right-column">
-      {{> top-address }}
-    </div>
-  </div>
-  {{> instafeed }}
-</div>
+{{> frontpage}}

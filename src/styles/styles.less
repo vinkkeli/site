@@ -12,6 +12,7 @@
 @desktop: ~"(min-width: @{desktopMinWidth}px)";
 @bodyBackground: #fdfdfd; //eee9e2
 @naviBackground: #101010; //#ede9e2;
+@naviMobileBackground: #282828;
 @footerBackground: #F9F1E9;
 @bodyTextColor: #1e1e1e;
 @darkRed: #52251f;
@@ -109,6 +110,10 @@ h4 {
   margin-top: 80px;
 
   .social {
+
+    @media @mobile {
+      margin-top: 20px;
+    }
     a {
       display: inline-block;
       margin: 0 0 10px;
@@ -177,6 +182,85 @@ h4 {
   }
 }
 
+.price {
+  font-style: italic;
+  color: #9E8A68;
+  display: inline-block;
+}
+
+.food-info {
+  ul strong {
+    font-weight: 500;
+    width: 340px;
+    display: inline-block;
+  }
+}
+
+.lunch-info {
+  strong {
+    font-weight: 500;
+  }
+  max-width: 700px;
+}
+
+.lunch-prices {
+
+  @media @tablet-and-desktop {
+    max-width: 220px;
+  }
+
+  @media @mobile {
+    text-align: center;
+  }
+}
+
+.lunch, .food, .lunch-prices {
+  line-height: 22px;
+  @topmargin: 20px;
+  .price {
+    float: right;
+  }
+  margin-top: 40px;
+  @media @mobile {
+    text-align: center;
+  }
+  strong {
+    font-weight: 500;
+  }
+  
+  li {
+    margin: 0 0 8px;
+    @media @mobile {
+      margin-bottom: 15px;
+    }
+  }
+  li p {
+    margin: 0;
+  }
+  ul {
+    margin: @topmargin 0 40px;
+
+    @media @mobile {
+      margin-bottom: 45px;
+    }
+  }
+  h3 {
+    margin-top: 40px;
+  }
+}
+.food, .lunch-prices {
+  @pricemargin: 80px;
+  ul {
+    padding-right: @pricemargin;
+  }
+  h3 {
+    margin-right: @pricemargin;
+  }
+}
+.food {
+  max-width: 700px;
+}
+
 .main-navigation {
   font-family: 'Merriweather', times;
   position: absolute;
@@ -188,15 +272,110 @@ h4 {
   height: 70px;
   opacity: 0.90;
 
+  @media @mobile {
+    background: @naviMobileBackground;
+    opacity: 1;
+  }
+
   > div {
     margin: auto;
     position: relative;
+  }
+}
+
+
+.navigation-mobile {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @media @tablet-and-desktop {
+    display: none;
+  }
+
+  &.open {
+    > .hamburger {
+      opacity: 0;
+    }
+    .navigation-drawer .hamburger {
+      opacity: 1;
+    }
+    .navigation-drawer {
+      right: 0px;
+    }
+  }
+
+  .navigation {
+    margin-top: 70px;
+  }
+
+  .navigation li {
+    text-align: right;
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #ededed;
+    cursor: pointer;
+    font-weight: 500;
+    transform: rotate(90deg);
+    padding: 10px;
+    transition: opacity 200ms;
+    opacity: 1;
+  }
+
+  .navigation-drawer {
+    width: 0px;
+    background: @naviMobileBackground;
+    position: fixed;
+    top: 00px;
+    bottom: 0;
+    right: -240px;
+    width: 240px;
+    z-index: 111111;
+    height: 100%;
+    transition: right 200ms;
+
+    .hamburger {
+      opacity: 0;
+      /*position: initial;
+      float: right;
+      margin-top: 5px;
+      padding: 15px;*/
+    }
+  }
+}
+
+.navigation-desktop, .languages-desktop {
+  @media @mobile {
+    display: none;
   }
 
   .navigation {
     position: absolute;
     right: 0;
     top: 15px;
+
+    @media (max-width: 1122px) {
+      right: 50px;
+    }
+
+    li {
+      display: inline-block;
+      padding: 5px;
+      margin: 0 5px;
+
+      &:last-child {
+        padding-right: 0;
+        margin-right: 0;
+      }
+    }
   }
 }
 
@@ -204,7 +383,10 @@ h4 {
   color: #ededed;
   font-size: 17px;
   padding: 4px 0;
-  margin: 0 5px;
+
+  @media @desktop {
+    margin: 0 5px;
+  }
   transition: color 200ms;
   &:hover {
     color: #d4af6f;
@@ -214,17 +396,6 @@ h4 {
     &:hover {
       color: #ededed;
     }
-  }
-}
-
-.navigation li {
-  display: inline-block;
-  padding: 5px;
-  margin: 0 5px;
-
-  &:last-child {
-    padding-right: 0;
-    margin-right: 0;
   }
 }
 
@@ -312,6 +483,11 @@ h4 {
 .hero {
   background: url('hero_pojat_gs.jpg') no-repeat center center #44403D;
   background-size: cover;
+
+  &.lunch {
+    background: url('hero_pojat_gs.jpg') no-repeat center center #44403D;
+    background-size: cover;
+  }
 
   @media @desktop {
     height: 550px;
@@ -463,6 +639,8 @@ a.reserve-table-button {
   width: 220px;
   padding: 0;
   margin-top: 19px;
+  position: absolute;
+  z-index: 11111111;
 }
 .main-content {
   margin: 40px auto;

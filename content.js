@@ -27,7 +27,8 @@ function fetchContent(cb) {
         var html = mapValues(entry.fields, function(value) { return marked((value || '').normalize('NFC')) })
 
         return map(html, function(val, keyWithLocale) {
-          if (keyWithLocale.split('_').length == 1) {
+          var splitted = keyWithLocale.split('_')
+          if (splitted.length == 1  || ['en', 'sv', 'fi'].indexOf(splitted[splitted.length-1]) === -1) {
             // No locale
             return {locale: undefined, key: keyWithLocale, content: val}
           } else {
