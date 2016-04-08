@@ -50,8 +50,8 @@ module.exports = {
     en: 'Book a table'
   },
   tableonline: {
-    fi: 'https://v2.tableonline.fi/instabook/bookings/610/yr3faXipsY?locale=fi',
-    en: 'https://v2.tableonline.fi/instabook/bookings/610/yr3faXipsY?locale=en',
-    sv: 'https://v2.tableonline.fi/instabook/bookings/610/yr3faXipsY?locale=se'
+    fi: 'https://v2.tableonline.fi/instabook/bookings/6RnuuE7?locale=fi',
+    en: 'https://v2.tableonline.fi/instabook/bookings/6RnuuE7?locale=en',
+    sv: 'https://v2.tableonline.fi/instabook/bookings/6RnuuE7?locale=se'
   }
 }
