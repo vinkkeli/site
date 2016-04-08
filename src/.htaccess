@@ -6,3 +6,4 @@ RewriteCond %{HTTP_HOST} ^www\.ravintolavinkel.fi$ [NC]
 RewriteRule ^(.*) http://www.ravintolavinkkeli.fi/$1 [R=301]
 
 RewriteCond %{HTTP_HOST} ^ravintolavinkkeli.fi$ [NC]
+RewriteRule ^(.*) http://www.ravintolavinkkeli.fi/$1 [R=301]
