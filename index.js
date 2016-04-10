@@ -59,7 +59,8 @@ content(function(contentFields) {
       pattern: ':locale/:slug',
     })))
     .use(ignore([
-      'styles/*.less'
+      'styles/*.less',
+      'helpers/*.js'
     ]))
     .destination('./build')
     .build(function (err) { if(err) console.log(err) })
