@@ -1,0 +1,70 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Restaurant",
+  "@id": "http://www.ravintolavinkkeli.fi",
+  "name": "Vinkkeli",
+  "telephone": "+358 29 1800222",
+  "url": "http://www.ravintolavinkkeli.fi",
+  "acceptsReservations": "True",
+  "servesCuisine": [
+    "Classic",
+    "Scandinavian"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "Finland",
+    "addressRegion": "Helsinki",
+    "addressLocality": "Helsinki",
+    "postalCode": "00130",
+    "streetAddress": "Pieni Roobertinkatu 8"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 60.164120,
+    "longitude": 24.946296
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "17:00",
+      "closes": "24:00"
+    }
+  ],
+  "sameAs" : [
+    "https://www.facebook.com/ravintolavinkkeli",
+    "https://www.instagram.com/ravintolavinkkeli/"
+  ],
+  "potentialAction":{
+    "@type":"ReserveAction",
+    "target":{
+      "@type":"EntryPoint",
+      {{#iflocale 'fi'}}
+      "urlTemplate":"http://www.ravintolavinkkeli.fi/#reserve",
+      {{/iflocale}}
+      {{#iflocale 'sv'}}
+      "urlTemplate":"http://www.ravintolavinkkeli.fi/sv/#reserve",
+      {{/iflocale}}
+      {{#iflocale 'en'}}
+      "urlTemplate":"http://www.ravintolavinkkeli.fi/en/#reserve",
+      {{/iflocale}}
+      "inLanguage":"{{locale}}",
+      "actionPlatform":[
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result":{
+      "@type":"FoodEstablishmentReservation",
+      "name":"{{translate 'reservetable'}}"
+    }
+  }
+}
+</script>

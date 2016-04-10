@@ -26,7 +26,6 @@ var notForGoogle = function(filename) {
 
 autoprefixPlugin = new LessPluginAutoPrefix({browsers: ["last 4 versions"]})
 
-
 content(function(contentFields) {
   Metalsmith(__dirname)
     .concurrency(50)
