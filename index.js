@@ -14,7 +14,7 @@ var ignore = require('metalsmith-ignore')
 var registerHelpers = require('metalsmith-register-helpers')
 
 var production = (process.env.NODE_ENV || 'dev') === 'production'
-var assetsPath = production ? '/test-front/' : '/'
+var assetsPath = production ? '/' : '/'
 
 var GOOGLE_VERIFICATION_FILE = 'googlee7604517913b481f.html'
 
