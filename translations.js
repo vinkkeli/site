@@ -10,9 +10,9 @@ module.exports = {
     en: 'Wine'
   },
   food: {
-    fi: 'Ruoka',
-    sv: 'Mat',
-    en: 'Food'
+    fi: 'Menu',
+    sv: 'Menu',
+    en: 'Menu'
   },
   lunchtitle: {
     fi: 'Lounas',
@@ -48,6 +48,11 @@ module.exports = {
     fi: 'Varaa pöytä',
     sv: 'Reservera bord',
     en: 'Book a table'
+  },
+  photostook: {
+    fi: 'Kuvat',
+    en: 'Photos',
+    sv: 'Bilder'
   },
   tableonline: {
     fi: 'https://v2.tableonline.fi/instabook/bookings/6RnuuE7?locale=fi',
