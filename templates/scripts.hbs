@@ -39,21 +39,26 @@ function track(name) {
 var buttons = document.getElementsByClassName('reserve-table-button')
 var close = document.getElementsByClassName('close-reserve-table')
 var reserveTableDiv = document.getElementsByClassName('reserve-table')
+
 if (buttons.length && reserveTableDiv.length) {
   var b = buttons[0]
   var r = reserveTableDiv[0]
   function openReservtions(e) {
-    e.preventDefault()
+    e && e.preventDefault()
     r.classList.remove('closed')
     track('open reservations')
   }
   function closeReservations(e) {
-    e.preventDefault()
+    e && e.preventDefault()
     r.classList.add('closed')
     track('close reservations')
   }
   b.addEventListener("click", openReservtions, false)
   close[0].addEventListener("click", closeReservations, false)
+
+  if (window && window.location && window.location.hash === '#reserve') {
+    openReservtions()
+  }
 }
 
 function openLanguageMenu() {
