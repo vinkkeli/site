@@ -1,21 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
-    <url>
-        <loc>http://www.ravintolavinkkeli.fi/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
-        <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/" />
-        <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
-    </url>
-    <url>
-        <loc>http://www.ravintolavinkkeli.fi/en/</loc>
-        <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
-        <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/" />
-        <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
-    </url>
-    <url>
-        <loc>http://www.ravintolavinkkeli.fi/sv/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
-        <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
-        <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/" />
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/sv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/" />
+  </url>
+
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/fi/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/menu/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/menu/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/menu/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/en/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/menu/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/menu/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/menu/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/sv/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/menu/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/menu/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/menu/" />
+  </url>
+
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/fi/viini/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/viini/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/vin/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/wine/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/sv/vin/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/viini/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/vin/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/wine/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/en/wine/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/viini/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/vin/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/wine/" />
+  </url>
+
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/fi/lounas/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/lounas/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/lunch/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/lunch/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/sv/lunch/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/lounas/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/lunch/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/lunch/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/en/lunch/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/lounas/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/lunch/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/lunch/" />
+  </url>
+
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/fi/vinkkeli/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/vinkkeli/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/vinkkeli/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/vinkkeli/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/sv/vinkkeli/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/vinkkeli/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/vinkkeli/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/vinkkeli/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/en/vinkkeli/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/vinkkeli/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/vinkkeli/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/vinkkeli/" />
+  </url>
 </urlset>
