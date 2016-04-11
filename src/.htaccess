@@ -7,3 +7,8 @@ RewriteRule ^(.*) http://www.ravintolavinkkeli.fi/$1 [R=301]
 
 RewriteCond %{HTTP_HOST} ^ravintolavinkkeli.fi$ [NC]
 RewriteRule ^(.*) http://www.ravintolavinkkeli.fi/$1 [R=301]
+
+# 1 Month for most static assets
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
+Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
