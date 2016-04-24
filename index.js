@@ -26,14 +26,19 @@ var notForGoogle = function(filename) {
 
 autoprefixPlugin = new LessPluginAutoPrefix({browsers: ["last 4 versions"]})
 
-content(function(contentFields) {
+content(function(data) {
+
+  var content = data.content
+  var specials = data.specials
+
   Metalsmith(__dirname)
     .concurrency(50)
     .use(define({
       production: true,
       assetsPath: assetsPath,
       gaTrackerId: gaTrackerId,
-      content: contentFields
+      content: content,
+      specials: specials
     }))
     .use(registerHelpers({directory: "src/helpers/"}))
     .use(multiLanguage({ default: 'fi', locales: ['fi', 'en', 'sv'] }))

@@ -1,21 +1,27 @@
 <div class="hero hero-lunch"></div>
 <div class="main-content">
-  {{> reserve-table }}  
-  <div class="two-column">
-    <div>
+  {{> reserve-table }}
+  <div class="two-column reverse">
+    <div class="left-column">
       <div class="lunch-info">
         {{translate 'lunch_info'}}
       </div>
     </div>
     <div class="right-column">
+      <div class="special-links">
+        {{#each specials}}
+          <a href="#{{translate 'anchor' this}}">{{translate 'name' this}}</a>
+        {{/each}}
+      </div>
     </div>
   </div>
-  
-  {{!<div class="lunch">
-    {{translate 'lunch' \}\}
-  </div>}}
 
-  {{!<div class="lunch-prices">
-    {{translate 'lunch_prices'\}\}
-  </div> }}
+  {{#each specials}}
+      <hr />
+      <div class="lunch lunch-special">
+        <a name="{{translate 'anchor' this}}"><h2>{{translate 'name' this}}</h2></a>
+        {{translate 'lunch' this}}
+      </div>
+  {{/each}}
+
 </div>

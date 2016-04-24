@@ -111,6 +111,26 @@ h4 {
   max-width: 700px;
 }
 
+.special-links {
+  @media @tablet-and-desktop {
+    margin-top: 60px;
+  }
+  a {
+    display: block;
+    margin: 10px 0;
+    background: @footerBackground;
+    padding: 10px 20px;
+  }
+}
+
+hr {
+  border: 0;
+  background: url('ornamentti.png') no-repeat center center transparent;
+  margin: 60px 0;
+  height: 50px;
+  background-size: contain;
+}
+
 .footer {
   font-family: 'Open Sans', sans-serif;
   background: @footerBackground;
@@ -151,7 +171,7 @@ h4 {
     margin: auto;
     #map {
       margin-top: 20px;
-    } 
+    }
     @media @tablet-and-desktop {
       padding: 30px 0;
       display: flex;
@@ -163,7 +183,7 @@ h4 {
       .info {
         flex: 0 0 300px;
       }
-      
+
     }
 
     @media @mobile {
@@ -208,9 +228,19 @@ h4 {
   }
 }
 
+.lunch-special {
+  max-width: 700px;
+}
 .lunch-info {
-  strong {
+  ul {
+    @media @mobile {
+      text-align: center;
+    }
+  }
+  ul strong {
     font-weight: 500;
+    width: 350px;
+    display: inline-block;
   }
   max-width: 700px;
 }
@@ -232,6 +262,12 @@ h4 {
   @topmargin: 20px;
   .price {
     float: right;
+    margin-left: 15px;
+  }
+  em {
+    display: block;
+    margin-bottom: 40px;
+    font-style: italic;
   }
   @media @mobile {
     text-align: center;
@@ -239,7 +275,7 @@ h4 {
   strong {
     font-weight: 500;
   }
-  
+
   li {
     margin: 0 0 8px;
     @media @mobile {
@@ -484,7 +520,7 @@ h4 {
 .lightwidget-widget.mobile {
   @media @tablet {
     max-width: 700px;
-    height: 700px;  
+    height: 700px;
   }
 
   @media @mobile {
@@ -495,7 +531,7 @@ h4 {
   @media (max-width: 430px) {
     height: 360px;
   }
-  
+
   @media @desktop {
     display: none;
   }
@@ -517,10 +553,10 @@ h4 {
       background-size: 1920px;
     }
     @media (min-width: 1400px) {
-      background-position: 50% 10%; 
+      background-position: 50% 10%;
     }
     @media (max-width: 1400px) and (min-width: 580px){
-      background-position: 50% 5%; 
+      background-position: 50% 5%;
     }
   }
 
@@ -585,11 +621,11 @@ h4 {
     }
   }
 
-  .reserve-table-button { 
+  .reserve-table-button {
     width: 260px;
     position: absolute;
   }
-  
+
 }
 
 a.reserve-table-button {
@@ -651,7 +687,7 @@ a.reserve-table-button {
       }
     }
     @media @mobile {
-      padding: 30px 10px; 
+      padding: 30px 10px;
       > div {
         flex-wrap: wrap;
       }
@@ -663,7 +699,7 @@ a.reserve-table-button {
         order: 2;
       }
     }
-    
+
   }
 }
 .top-address {
@@ -673,6 +709,13 @@ a.reserve-table-button {
  .hours {
     p {
       margin-bottom: 0px;
+    }
+    li {
+      @media @mobile {
+        width: 200px;
+        margin: auto;
+        text-align: left;
+      }
     }
     margin-bottom: 20px;
   }
@@ -707,6 +750,17 @@ a.reserve-table-button {
   @media @mobile {
     flex-wrap: wrap;
   }
+
+  &.reverse {
+    @media @mobile {
+      .left-column {
+        order: 1;
+      }
+      .right-column {
+        order: 0;
+      }
+    }
+  }
 }
 
 .intro-text {
@@ -726,8 +780,11 @@ a.reserve-table-button {
   flex: 0 0 260px;
   margin-left: 20px;
   @media @mobile {
+    padding-top: 0;
     order: 1;
     margin-left: 0px;
+    flex: 1 0 auto;
+    text-align: center;
   }
 }
 .photo-credit, .photo-credit a {
