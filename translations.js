@@ -20,9 +20,9 @@ module.exports = {
     en: 'Lunch'
   },
   openingtimes: {
-    fi: 'Aukioloajat',
-    sv: 'Öppettider',
-    en: 'Opening hours'
+    fi: 'Aukioloajat - kesä',
+    sv: 'Öppettider - sommar',
+    en: 'Opening hours - summer'
   },
   contact: {
     fi: 'Ota yhteyttä',
