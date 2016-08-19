@@ -45,16 +45,16 @@ h1, h2, h3, h4 {
   font-family: 'Crimson Text', times, serif;
 }
 h1, h2 {
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   color: #46423D;
 }
 h1 {
-  @media @tablet-and-desktop {
+  @media @desktop {
+    font-size: 30px;
     max-width: 600px;
-    font-size: 34px;
     line-height: 44px;
   }
   @media @mobile {
@@ -64,11 +64,13 @@ h1 {
     text-align: center;
   }
   @media @tablet {
+    line-height: 34px;
+    font-size: 28px;
     width: 60%;
   }
 }
 h2 {
-  font-size: 26px;
+  font-size: 28px;
   line-height: 32px;
    @media @mobile {
     text-align: center;
@@ -84,7 +86,6 @@ h4 {
   font-size: 20px;
   line-height: 26px;
   font-weight: 500;
-  margin-top: 40px;
 }
 .top-address h4 {
   text-transform: uppercase;
@@ -157,8 +158,11 @@ hr {
   font-size: 16px;
   margin-top: 80px;
 
+  .hours {
+    margin-bottom: 40px;
+  }
   .social {
-
+    margin-top: 40px;
     @media @mobile {
       margin-top: 20px;
     }
@@ -186,7 +190,6 @@ hr {
   }
 
   .content {
-
     margin: auto;
     #map {
       margin-top: 20px;
@@ -198,15 +201,10 @@ hr {
       .address {
         flex: 1 0 auto;
         margin-left: 40px;
-        
-        h4 {
-          margin-top: 0;
-        }
       }
       .info {
         flex: 0 0 300px;
       }
-
     }
 
     @media @mobile {
@@ -225,7 +223,7 @@ hr {
     }
     p {
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 0px;
     }
   }
   .address span {
@@ -663,7 +661,7 @@ hr {
   @media @tablet-and-desktop {
     .reserve-table-button {
       right: 0;
-      top: 5px;
+      top: 0px;
     }
   }
 
@@ -694,8 +692,9 @@ a.reserve-table-button {
   overflow: hidden;
   @media @tablet-and-desktop {
     height: 575px;
+    margin-bottom: 20px;
   }
-  transition: height 500ms;
+  transition: height 500ms, margin-bottom 500ms;
 
   @media @mobile {
     margin: 0 -20px 0 -20px;
@@ -703,11 +702,18 @@ a.reserve-table-button {
 
   &.closed {
     height: 0;
+    margin-bottom: 0px;
   }
 
   .close-reserve-table {
     padding: 5px;
-    margin: 20px;
+    @media @tablet-and-desktop {
+      margin: 20px;
+    }
+    @media @mobile {
+      margin: 20px 10px;
+    }
+
     position: absolute;
     right: 0;
     top: 0;
@@ -726,6 +732,10 @@ a.reserve-table-button {
 
     @media @tablet-and-desktop {
       padding: 10px 30px 30px 30px;
+
+      h2 {
+        margin-top: 20px;
+      }
       .tableonline {
         flex: 0 0 auto;
         margin-right: 40px;
@@ -739,10 +749,12 @@ a.reserve-table-button {
       }
       .info {
         order: 1;
+        padding: 0 10px;
       }
       .tableonline {
         margin-top: 20px;
         order: 2;
+        margin-left: -10px;
       }
     }
 
@@ -752,19 +764,7 @@ a.reserve-table-button {
   font-size: 16px;
   @address-bar-height: 80px;
 
- .hours {
-    p {
-      margin-bottom: 0px;
-    }
-    li {
-      @media @mobile {
-        width: 200px;
-        margin: auto;
-        text-align: left;
-      }
-    }
-    margin-bottom: 20px;
-  }
+
   a.reserve-table-button {
     display: inline-block;
     margin-left: 30px;
@@ -774,9 +774,27 @@ a.reserve-table-button {
   }
 }
 
-.hours li strong {
-  display: inline-block;
-  width: 90px;
+.hours {
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 0px;
+  }
+  li {
+    line-height: 22px;
+    @media @mobile {
+      width: 200px;
+      margin: auto;
+      text-align: left;
+    }
+    strong {
+      display: inline-block;
+      width: 90px;
+    }
+  }
+  .newday {
+    margin-top: 15px;
+  }
 }
 
 .main-navigation img.logo {
@@ -821,7 +839,7 @@ a.reserve-table-button {
 }
 
 .right-column {
-  padding: 20px 0;
+  padding: 0 0 20px 0;
   width: 260px;
   flex: 0 0 260px;
   margin-left: 20px;
