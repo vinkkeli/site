@@ -4,15 +4,25 @@ module.exports = {
     sv: 'Hem',
     en: 'Home'
   },
+  'private-events': {
+    fi: 'Kabinetti',
+    sv: 'Kabinett',
+    en: 'Private events'
+  },
+  'food-and-wine': {
+    fi: 'Ruoka & Viini',
+    sv: 'Mat & Vin',
+    en: 'Food & Wine'
+  },
+  food: {
+    fi: 'Ruoka',
+    sv: 'Mat',
+    en: 'Food'
+  },
   wine: {
     fi: 'Viini',
     sv: 'Vin',
     en: 'Wine'
-  },
-  food: {
-    fi: 'Menu',
-    sv: 'Menu',
-    en: 'Menu'
   },
   lunchtitle: {
     fi: 'Lounas',

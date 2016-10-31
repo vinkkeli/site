@@ -24,7 +24,7 @@ var client = contentful.createClient({
 function markdownToHtml(value) {
   var markdown = value || ''
   if (markdown.match(/\n/g)) {
-    return marked(markdown.normalize('NFC'))  
+    return marked(markdown.normalize('NFC'))
   } else {
     return markdown.normalize('NFC')
   }

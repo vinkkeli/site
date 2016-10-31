@@ -1,19 +1,21 @@
 <div class="reserve-table-container">
-  <a href="#reserve" name="reserve" class="reserve-table-button">{{translate 'reservetable'}}</a>
+  <div class="main-content">
+    <a href="#reserve" name="reserve" class="reserve-table-button">{{translate 'reservetable'}}</a>
 
-  <div class="reserve-table closed">
-    <i class="icon-delete close-reserve-table"></i>
-    <div class="content">
-      <h2>{{translate 'reservetable'}}</h2>
-      <div>
-        <div class="tableonline">
-          <iframe
-            src="{{translate 'tableonline'}}"
-            width="340" height="510" scrolling="yes" frameborder="0" allowtransparency="true">
-          </iframe>
-        </div>
-        <div class="info">
-          {{translate 'reserve_info'}}
+    <div class="reserve-table closed">
+      <i class="close-reserve-table material-icons">close</i>
+      <div class="content">
+        <h2>{{translate 'reservetable'}}</h2>
+        <div>
+          <div class="tableonline">
+            <iframe
+              src="{{translate 'tableonline'}}"
+              width="340" height="510" scrolling="yes" frameborder="0" allowtransparency="true">
+            </iframe>
+          </div>
+          <div class="info">
+            {{translate 'reserve_info'}}
+          </div>
         </div>
       </div>
     </div>

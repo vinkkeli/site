@@ -1,17 +1,24 @@
-<div class="hero hero-menu"></div>
+<div class="hero carousel food-carousel">
+  <div class="carousel-item food-carousel-0"></div>
+  <div class="carousel-item food-carousel-1"></div>
+  <div class="carousel-item food-carousel-2"></div>
+</div>
+{{> reserve-table }}
 <div class="main-content">
-  {{> reserve-table }}
-
-  <div class="two-column">
-    <div>
-      <div class="food-info">
-        {{translate 'food_info'}}
-      </div>
-    </div>
-    <div class="right-column"></div>
+  <div class="food-info pricelist">
+    {{translate 'food_info'}}
   </div>
-
-  <div class="food">
-    {{translate 'alacarte'}}
+</div>
+<div class="dark-section">
+<div class="main-content">
+  <div class="wine-info">
+    {{translate 'wine_info'}}
+  </div>
+</div>
+</div>
+ <div class="main-content">
+    <div class="alacarte pricelist">
+      {{translate 'alacarte'}}
+    </div>
   </div>
 </div>

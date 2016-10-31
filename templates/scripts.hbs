@@ -1,3 +1,6 @@
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{{assetsPath}}styles/slick.min.js"></script>
 <script type="text/javascript">
 var map
 function initMap() {
@@ -82,5 +85,13 @@ function openNavigationDrawer() {
     track('open mobile menu')
   }
 }
+
+$(document).ready(function(){
+  $('.carousel').slick({
+    dots: true,
+    prevArrow: '<div class="prev"><i class="material-icons">keyboard_arrow_left</i></div>',
+    nextArrow: '<div class="next"><i class="material-icons">keyboard_arrow_right</i></div>'
+  })
+})
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkr155MvQ-F-YZEW9usdhBBuySlZf6Ydc&callback=initMap" async defer></script>  
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkr155MvQ-F-YZEW9usdhBBuySlZf6Ydc&callback=initMap" async defer></script>

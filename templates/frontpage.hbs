@@ -1,16 +1,28 @@
-<div class="hero"></div>
+<div class="hero carousel frontpage-carousel">
+  <div class="carousel-item frontpage-carousel-0"></div>
+  <div class="carousel-item frontpage-carousel-1"></div>
+  <div class="carousel-item frontpage-carousel-2"></div>
+  <div class="carousel-item frontpage-carousel-3"></div>
+</div>
+{{> reserve-table }}
 <div class="main-content">
-  {{> reserve-table }}
-  <h1>{{{translate 'frontpage_header'}}}</h1>
-
   <div class="two-column">
-    <div class="intro-text">
-      {{{translate 'intro'}}}
+    <div class="left">
+      <h1>{{{translate 'frontpage_header'}}}</h1>
+      <p>{{translate 'intro'}}</p>
+
     </div>
-    <div class="right-column">
+    <div class="right">
       {{> top-address }}
     </div>
   </div>
-  {{> instafeed }}
+
+</div>
+{{> instafeed }}
+<div class="main-content">
+  <div class="vinkkeli-intro">
+    <h2>Vinkkeli</h2>
+    {{translate 'vinkkeli_page_intro'}}
+  </div>
 </div>
 {{> microdata }}

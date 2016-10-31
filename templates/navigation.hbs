@@ -1,15 +1,17 @@
 <div class="main-navigation">
   <div class="">
-    <img class="logo" src="{{assetsPath}}styles/logo-white.png" alt="Vinkkeli, ruoka- ja viiniravintola"/>
+    <div class="logo">
+      <img src="{{assetsPath}}styles/logo-white.png" alt="Vinkkeli, ruoka- ja viiniravintola"/>
+    </div>
 
     <div class="navigation-desktop">
       {{> main-navigation}}
     </div>
 
     <div class="navigation-mobile">
-      <a href="#" class="hamburger" onclick="openNavigationDrawer()">|||</a>
+      <a href="#" class="hamburger" onclick="openNavigationDrawer()"><i class="material-icons">menu</i></a>
       <div class="navigation-drawer">
-        <a href="#" class="hamburger" onclick="openNavigationDrawer()"><i class="icon-delete"></i></a>
+        <a href="#" class="hamburger" onclick="openNavigationDrawer()"><i class="material-icons">clear</i></a>
         {{> main-navigation}}
         <ul class="languages-mobile">
         {{#each locales}}
@@ -18,14 +20,15 @@
         </ul>
       </div>
     </div>
-
   </div>
   <ul class="languages languages-desktop">
-    <li class="active"><a href="#" onclick="openLanguageMenu()">{{locale}} <i class="icon-chevron-down"></i></a></li>
-    {{#each locales}}
-      {{#ifnotlocale this}}
-        <li><a rel="alternate" hreflang="{{this}}" href="{{{langlink this}}}">{{this}}</a></li>
-      {{/ifnotlocale}}
-    {{/each}}
-  </ul>
+      <li class="active">
+        <a href="#" onclick="openLanguageMenu()">{{locale}} <i class="material-icons icon-arrow">keyboard_arrow_down</i></a>
+      </li>
+      {{#each locales}}
+        {{#ifnotlocale this}}
+          <li><a rel="alternate" hreflang="{{this}}" href="{{{langlink this}}}">{{this}}</a></li>
+        {{/ifnotlocale}}
+      {{/each}}
+    </ul>
 </div>

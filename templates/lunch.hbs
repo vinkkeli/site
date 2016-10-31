@@ -1,19 +1,23 @@
-<div class="hero hero-lunch"></div>
+<div class="hero carousel lunch-carousel">
+  <div class="carousel-item lunch-carousel-0"></div>
+</div>
+{{> reserve-table }}
 <div class="main-content">
-  {{> reserve-table }}
   <div class="two-column reverse">
-    <div class="left-column">
-      <div class="lunch-info">
+    <div class="left">
+      <div class="lunch-info pricelist">
         {{translate 'lunch_info'}}
       </div>
     </div>
-    <div class="right-column">
+    {{#if specials}}
+    <div class="right">
       <div class="special-links">
         {{#each specials}}
           <a href="#{{translate 'anchor' this}}">{{translate 'name' this}}</a>
         {{/each}}
       </div>
     </div>
+    {{/if}}
   </div>
 
   {{#each specials}}
