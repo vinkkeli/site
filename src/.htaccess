@@ -8,6 +8,19 @@ RewriteRule ^(.*) http://www.ravintolavinkkeli.fi/$1 [R=301]
 RewriteCond %{HTTP_HOST} ^ravintolavinkkeli.fi$ [NC]
 RewriteRule ^(.*) http://www.ravintolavinkkeli.fi/$1 [R=301]
 
+RedirectMatch 301 ^/fi/menu/ http://www.ravintolavinkkeli.fi/fi/ruoka-ja-viini/
+RedirectMatch 301 ^/en/menu/ http://www.ravintolavinkkeli.fi/en/food-and-wine/
+RedirectMatch 301 ^/sv/menu/ http://www.ravintolavinkkeli.fi/sv/mat-och-vin/
+
+RedirectMatch 301 ^/fi/viini/ http://www.ravintolavinkkeli.fi/fi/ruoka-ja-viini/
+RedirectMatch 301 ^/en/wine/ http://www.ravintolavinkkeli.fi/en/food-and-wine/
+RedirectMatch 301 ^/sv/vin/ http://www.ravintolavinkkeli.fi/sv/mat-och-vin/
+
+RedirectMatch 301 ^/fi/vinkkeli/ http://www.ravintolavinkkeli.fi/
+RedirectMatch 301 ^/en/vinkkeli/ http://www.ravintolavinkkeli.fi/en/
+RedirectMatch 301 ^/sv/vinkkeli/ http://www.ravintolavinkkeli.fi/sv/
+
+
 # 1 Month for most static assets
 <filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
 Header set Cache-Control "max-age=2592000, public"
