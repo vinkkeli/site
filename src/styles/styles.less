@@ -344,7 +344,6 @@ ul.navigation,  .languages{
   background: #7c544a;
   border-radius: 50px;
   font-size: 20px;
-  text-transform: uppercase;
   &:hover {
     color: @secondaryColor;
   }
@@ -356,10 +355,6 @@ ul.navigation,  .languages{
       padding-bottom: 20px;
     }
   }
-  //display: none;
-  /*position: absolute;
-  left: 0;
-  right: 0;*/
 }
 
 .reserve-table {
@@ -503,10 +498,11 @@ ul.navigation,  .languages{
       flex: 1 1 auto;
       margin-left: 40px;
     }
-    .hours {
-      margin: auto;
-      width: 200px;
-    }
+  }
+
+  .hours {
+    margin: auto;
+    width: 200px;
   }
 
   #map {
@@ -752,9 +748,6 @@ ul.navigation,  .languages{
   @pricemargin: 80px;
   @topmargin: 20px;
 
-  @media @mobile {
-    text-align: center;
-  }
   ul {
     max-width: @priceListMaxWidth;
   }
