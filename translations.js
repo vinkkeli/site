@@ -9,6 +9,11 @@ module.exports = {
     sv: 'Kabinett',
     en: 'Private events'
   },
+  giftcard: {
+    fi: 'Lahjakortti',
+    sv: 'Presentkort',
+    en: 'Gift card'
+  },
   'food-and-wine': {
     fi: 'Ruoka & Viini',
     sv: 'Mat & Vin',

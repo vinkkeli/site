@@ -75,4 +75,23 @@
     <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/lunch/" />
     <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/lunch/" />
   </url>
+
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/fi/lahjakortti/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/lahjakortti/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/presentkort/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/gift-card/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/sv/presentkort/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/lahjakortti/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/presentkort/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/gift-card/" />
+  </url>
+  <url>
+    <loc>http://www.ravintolavinkkeli.fi/en/gift-card/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="http://www.ravintolavinkkeli.fi/fi/lahjakortti/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="http://www.ravintolavinkkeli.fi/sv/presentkort/" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://www.ravintolavinkkeli.fi/en/gift-card/" />
+  </url>
 </urlset>
