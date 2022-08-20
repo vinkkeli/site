@@ -3,41 +3,9 @@
 <script type="text/javascript" src="{{assetsPath}}styles/slick.min.js"></script>
 <script type="text/javascript">
 
-/*
-function initMap() {
-  var styles = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#b4d4e1"},{"visibility":"on"}]}]
-  var styledMap = new google.maps.StyledMapType(styles, {name: "Map"})
-  var pos = new google.maps.LatLng(60.164181, 24.946187)
-  var mapOptions = {
-    zoom: 15,
-    center: pos,
-    mapTypeControl: false,
-    mapTypeControlOptions: {
-      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-    }
-  }
-  map = new google.maps.Map(document.getElementById('map'), mapOptions)
-  var image = {
-    url: '{{assetsPath}}styles/mapmarker.png',
-    size: new google.maps.Size(60, 80),
-    scaledSize: new google.maps.Size(30, 40),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(15, 40),
-  }
-  var marker = new google.maps.Marker({
-    position: pos,
-    map: map,
-    title: 'Vinkkeli',
-    icon: image
-  })
-  map.mapTypes.set('map_style', styledMap)
-  map.setMapTypeId('map_style')
-}
-*/
-
 function track(name) {
   try {
-    ga('send', 'event', name)
+    gtag('event', name)
   } catch(e) {}
 }
 
@@ -104,7 +72,7 @@ $(document).ready(function(){
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
     center: [24.946187, 60.164181],
-    zoom: 12
+    zoom: 14
   })
   
   new mapboxgl.Marker({ color: 'rgb(181,55,45)'})
