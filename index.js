@@ -1,3 +1,4 @@
+require('./node-compat')
 var Metalsmith = require('metalsmith')
 var layouts = require('metalsmith-layouts')
 var inPlace = require('metalsmith-in-place')
