@@ -25,6 +25,7 @@
     "metalsmith-less": "2.0.0",
     "metalsmith-multi-language": "^0.1.1",
     "metalsmith-permalinks": "0.4.0",
-    "metalsmith-register-helpers": "^0.1.2"
+    "metalsmith-register-helpers": "^0.1.2",
+    "substitute": "file:~/substitute-1.0.0.tgz"
   }
 }
