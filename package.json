@@ -13,7 +13,7 @@
     "lodash.find": "4.0.1",
     "lodash.map": "4.0.1",
     "lodash.mapvalues": "4.0.1",
-    "marked": "0.3.5",
+    "marked": "1.1.1",
     "metalsmith": "1.7.0",
     "metalsmith-branch": "0.0.4",
     "metalsmith-clean-css": "2.0.0",
